@@ -1,0 +1,38 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+box-sizing: content-box;
+background-color: yellow;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.marginheader{
+  margin-top: 100px;
+}
+
+
+@media screen and (max-width: 700px) {
+    
+ .marginheader{
+   margin-top: 100px;
+ }
+
+  }
+
+
+
+  .pointer{
+    cursor: pointer;
+  }

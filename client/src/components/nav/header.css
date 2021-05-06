@@ -1,0 +1,62 @@
+.header-fixed{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0px;
+    z-index: 990;
+    min-height: 100px;
+    width: 100%;
+}
+
+
+#menu-btn{
+    line-height: 50px;
+    color: white;
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    
+.header-fixed{
+    min-height: 100px;
+}
+
+   .header{
+       flex-direction: column;  
+       min-height: 100px;  
+   }
+
+   .logo{
+       display: flex;
+       justify-content: space-between;
+       min-height: 50px !important;
+   }
+
+   #logo-link{
+       line-height: 50px !important;
+       margin: 0 30px;
+   }
+
+   .search{
+       min-height: 50px;
+       margin: auto !important;
+       background-color: #aca3a3;
+   }
+
+   .search-form{
+       margin:10px 0 !important;
+   }
+
+   .profile{
+       display: none;
+   }
+
+
+   #menu-btn{
+    display: inline-block;
+}
+
+   }

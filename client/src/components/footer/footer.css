@@ -1,0 +1,146 @@
+.footer-container{
+    margin: 0;
+    padding: 0;
+    color: white;
+    margin-top: 50px;
+    box-sizing: content-box;
+    
+}
+
+.footer-content{
+    min-height: 300px;
+    padding: 5px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.footer-item{
+     width: 50%;
+     display: flex;
+
+}
+.shop{
+    display: flex;
+    flex-direction: column;
+}
+.shop p{
+    text-align: center;
+}
+.shop div{
+    display: flex;
+    flex-direction: column;
+}
+
+.shop div a{
+    display: block;
+    color: white !important;
+   text-transform:lowercase !important;
+    text-align: center;
+    font-size: 16px;
+}
+
+.follow-contact{
+    flex-direction: column;
+}
+
+.follow{
+height: 30%;
+}
+
+
+.follow p{
+    text-align: center;
+}
+.contact-container{
+height: 70%;
+}
+.contact-container p{
+    text-align: center;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.contact p{
+    text-align: center;
+}
+.social-icons{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons i{
+    font-size: 35px;
+padding: 10px;
+}
+
+.news-settler{
+    display: flex;
+    flex-direction: column;
+}
+.news-settler p{
+    text-align: center;
+}
+
+.news-settler div input{
+    width: 60%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    
+}
+
+.news-settler div button{
+    background-color: #C3003C;
+    color: white;
+    outline: none;
+    width: 30%;
+    padding: 10px;
+    border: none;
+}
+
+
+@media screen and (max-width: 700px) {
+   
+    .footer-content{
+      
+        flex-direction: column;
+    }
+    
+    .footer-item{
+        width: 100%;
+    }
+
+
+    
+
+
+    .news-settler div {
+      margin:auto;
+      width: 500px;
+        background-color: rgb(22, 41, 41);
+        
+    }
+    .news-settler div input{
+        width: 70%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        
+    }
+    
+    .news-settler div button{
+        background-color: #C3003C;
+        color: white;
+        outline: none;
+        width: 30%;
+        padding: 10px;
+        border: none;
+    }
+
+   }

@@ -1,0 +1,64 @@
+.slide{
+    width: 100%;
+    background-color: blue;
+    overflow: hidden;
+    height: 700px;
+}
+
+ .figure{
+   width: 300%;
+      height: 100%;
+      margin: 0;
+      left: 0;
+     position:relative;   
+     animation: 20s slider infinite; 
+}
+ .stopanimation{
+  width: 300%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+ position:relative;   
+}
+
+ .images{
+   width: 33.3333%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes slider{
+  0%{
+    left:0%
+  }
+  20%{
+    left:0%
+  }
+  30%{
+    left:-100%
+  }
+  45%{
+    left: -100%;
+  }
+  55%{
+    left: -200%;
+  }
+  70%{
+    left: -200%;
+  }
+  90%{
+    left: -100%;
+  }
+  100%{
+    left: -100;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+ .slide{
+   height: 300px;
+ }
+}

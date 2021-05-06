@@ -1,0 +1,44 @@
+.filter-btn{
+    display: none;
+}
+
+.filter-heading{
+    display: block;
+}
+
+@media screen and (max-width: 700px) {
+    
+    /* .filter{
+        display: none;
+        
+    } */
+ 
+.filter-btn{
+    cursor: pointer;
+display: block;
+position: fixed;
+padding: 0 10px;
+cursor: pointer;
+top: 100px;
+z-index: 990;
+color: white !important;
+background-color: #c3003c !important;
+ outline: none !important;
+ border: none !important;
+}
+
+
+.filter-heading{
+
+    display: none;
+}
+
+
+.filter{
+    position: fixed;
+    top: 122px;
+    width: 50% !important;
+    z-index: 1000 !important;
+}
+
+    }
