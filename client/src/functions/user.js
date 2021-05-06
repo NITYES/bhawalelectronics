@@ -1,8 +1,8 @@
-import axios from 'axios'
+import axios from './axios';
 
 
 export const userCart=async (cart,authtoken)=>{
-    return  await axios.post(`${process.env.REACT_APP_API}/user/cart`,{cart},{
+    return  await axios.post(`/user/cart`,{cart},{
           headers:{
               authtoken
           }
@@ -11,7 +11,7 @@ export const userCart=async (cart,authtoken)=>{
 
 
    export const getUserCart=async (authtoken)=>{
-    return  await axios.get(`${process.env.REACT_APP_API}/user/cart`,{
+    return  await axios.get(`/user/cart`,{
           headers:{
               authtoken
           }
@@ -19,7 +19,7 @@ export const userCart=async (cart,authtoken)=>{
    }
 
    export const emptyUserCart=async (authtoken)=>{
-    return  await axios.delete(`${process.env.REACT_APP_API}/user/cart`,{
+    return  await axios.delete(`/user/cart`,{
           headers:{
               authtoken
           }
@@ -28,7 +28,7 @@ export const userCart=async (cart,authtoken)=>{
 
 
    export const saveUserAddress=async (address,authtoken)=>{
-    return  await axios.post(`${process.env.REACT_APP_API}/user/address`,{address},{
+    return  await axios.post(`/user/address`,{address},{
           headers:{
               authtoken
           }

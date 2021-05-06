@@ -1,6 +1,6 @@
 import React from "react";
 import Resizer from "react-image-file-resizer";
-import axios from "axios";
+import axios from '../../functions/axios';
 import { useSelector } from "react-redux";
 import { Avatar, Badge } from "antd";
 
@@ -27,7 +27,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
             //   console.log(uri)
             axios
               .post(
-                `${process.env.REACT_APP_API}/uploadimages`,
+                `/uploadimages`,
                 { image: uri },
                 {
                   headers: {
@@ -36,14 +36,12 @@ const FileUpload = ({ values, setValues, setLoading }) => {
                 }
               )
               .then((res) => {
-                console.log("image upload res data", res);
                 setLoading(false);
                 allUploadedFiles.push(res.data);
                 setValues({ ...values, images: allUploadedFiles });
               })
               .catch((err) => {
                 setLoading(false);
-                console.log("CLOUDINARY UPLOAD ERROR");
               });
           },
           "base64"
@@ -56,8 +54,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
 
   const handleImageRemove = (public_id) => {
     setLoading(true);
-    console.log("remove image",public_id);
-    axios.post(`${process.env.REACT_APP_API}/removeimage`,{public_id},
+    axios.post(`/removeimage`,{public_id},
     {headers:{
         authtoken:user?user.token:""
     }}

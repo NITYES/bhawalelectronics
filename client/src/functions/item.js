@@ -1,11 +1,11 @@
 
-import axios from 'axios'
+import axios from './axios';
 import {isNumber} from 'lodash'
 import {slugify} from '../functions/helper'
 
    export const createItem=async (sub,authtoken)=>{
 
-    return await axios.post(`${process.env.REACT_APP_API}/item`,sub,{
+    return await axios.post(`/item`,sub,{
         headers:{
             authtoken:authtoken
         }
@@ -17,7 +17,7 @@ import {slugify} from '../functions/helper'
 
    export const getItems=async ( )=>{
 
-    return await axios.get(`${process.env.REACT_APP_API}/items`);
+    return await axios.get(`/items`);
    
    }
 
@@ -29,6 +29,6 @@ import {slugify} from '../functions/helper'
      }else{
          field=slugify(subId,{join:"-"})
      }
-    return await axios.get(`${process.env.REACT_APP_API}/items/${field}`);
+    return await axios.get(`/items/${field}`);
    
    }

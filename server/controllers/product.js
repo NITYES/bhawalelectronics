@@ -11,9 +11,6 @@ const {Capitalize}=require('../helperfunction')
 exports.create = async (req, res) => {
   try {
     //add slug to req.body
-
-console.log(req.body)
-
       let {category,subs,item,title}=req.body;
       const categoryString=await Category.findById({_id:category}).exec();
       const subString=await sub.findById({_id:subs}).exec();
@@ -40,7 +37,6 @@ console.log(req.body)
 //update products
 exports.update = async (req, res) => {
   try {
-console.log(req.body)
 const {title}=req.body;
 req.body.title=Capitalize(title)
    req.body.slug = slugify(req.body.title);
@@ -127,7 +123,6 @@ exports.list = async (req, res) => {
 
 exports.productsCount = async (req, res) => {
   let total = await Product.find({}).estimatedDocumentCount().exec();
-  console.log(total);
   res.json(total);
 };
 

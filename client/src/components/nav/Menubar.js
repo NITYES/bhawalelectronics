@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {loadMenu} from '../../functions/menu'
 import "./menu.css"
-import tv from '../../images/tv.jpg'
+import tv from '../../images/lg-washing-1.png'
 const Menubar=()=>{
 
 const[menu,setMenu]=useState([]);

@@ -63,7 +63,7 @@ userCart(cart,user.token).then(res=>{
 
           <div className="col-md-8">
           <h4>Cart/{cart.length}</h4>
-              {!cart.length?<p>No Product In The Cart.<Link to="/shop"> Continue Shopping</Link></p>:
+              {!cart.length?<p>No Product In The Cart.<Link to="/"> Continue Shopping</Link></p>:
               showCartElement()
               }
           </div>

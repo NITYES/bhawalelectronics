@@ -12,7 +12,6 @@ try {
     res.json(sub);
 
 } catch (error) {
-    console.log(error.message)
     res.status(400).send('Create category failed');
 }
 };

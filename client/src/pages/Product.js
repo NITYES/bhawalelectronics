@@ -26,7 +26,6 @@ useEffect(()=>{
 useEffect(()=>{
     if(product.ratings&& user){
         let existingRatingObject=product.ratings.find((ele)=>ele.postedBy.toString()===user._id.toString() )
-        console.log('my current rating',existingRatingObject)
         existingRatingObject && setStar(existingRatingObject.star); //current user star
     }
 })
@@ -34,13 +33,8 @@ useEffect(()=>{
 
 
 const onStarClick = (newRating,name) => {
-    console.log(newRating,name);   
     setStar(newRating);
-    console.log(star)
-
     productStar(name,newRating,user.token).then(res=>{
-
-        console.log("rating clicked",res.data);
    loadSingleProduct();//if you want to show rating in real time
 
     }).catch(err=>{
@@ -53,7 +47,6 @@ const loadSingleProduct=()=>{
     getProduct(slug).then(res=>{
 
 setProduct(res.data);
-console.log(res.data)
 //load related as well
 getRelated(res.data._id).then(res=>setRelatedProduct(res.data));
 

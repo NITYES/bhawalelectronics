@@ -23,7 +23,7 @@ const LoadingToRedirect=()=>{
 
     return (
     
-        <div className="container p-5 text-center">
+        <div className="container p-5 text-center marginheader" style={{minHeight:"100vh"}}>
             <p>Redirecting you in {count} seconds</p>
         </div>
     )

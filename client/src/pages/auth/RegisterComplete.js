@@ -53,7 +53,6 @@ const RegisterComplete = ({ history }) => {
         await user.updatePassword(password);
         const idTokenResult = await user.getIdTokenResult();
         //redux store
-        console.log("user", user, "idtokenresult", idTokenResult);
         //redirect to homepage
 
         createOrUpdateUser(idTokenResult.token)
@@ -73,7 +72,6 @@ const RegisterComplete = ({ history }) => {
         history.push("/");
       }
     } catch (error) {
-      console.log(error);
       toast.error(error.message);
     }
   };

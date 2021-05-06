@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {
   fetchProductsByFilter,
 } from "../functions/product";
-import {useDispatch } from "react-redux";
 import ProductCard from "../components/cards/ProductCard";
 import { Menu, Slider ,Checkbox,Radio,Pagination} from "antd";
 import { BgColorsOutlined, DollarOutlined,StarOutlined} from "@ant-design/icons";
@@ -22,7 +21,6 @@ const Products = ({match}) => {
   const [price, setPrice] = useState([0, 0]);
   const [ok, setOk] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [categoryIds,setCategoryIds]=useState([]);
   const [star,setStar]=useState(0);
   const [subs,setSubs]=useState([]);
   const [sub,setSub]=useState('');
@@ -31,7 +29,8 @@ const Products = ({match}) => {
   "Samsung",
   "Lenovo",
   "Microsoft",
-  'Apple']);
+  'Apple',
+"LG"]);
   const[brand,setBrand]=useState('');
   const[colors,setColors]=useState(["Black",
   "Brown",

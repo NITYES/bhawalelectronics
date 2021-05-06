@@ -22,7 +22,6 @@ const Login = ({ history }) => {
 
   useEffect(()=>{
     let intended=history.location.state;
-    console.log("intended",intended)
     if(intended){
       return; 
 
