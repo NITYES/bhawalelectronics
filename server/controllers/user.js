@@ -1,6 +1,8 @@
 const User=require('../models/user');
 const Product=require('../models/product');
 const Cart=require('../models/cart');
+const Contact=require('../models/contact');
+
 
 exports.userCart=async (req,res)=>{
 
@@ -83,3 +85,19 @@ const userAddress=await User.findOneAndUpdate(
     res.json({ok:true})
 
 }
+
+
+exports.saveContact=async (req,res)=>{
+
+
+    const {contact}=req.body;
+const newcontact=await new Contact(contact);
+newcontact.save((err,newcontact)=>{
+    if(err) return res.status(400).json({msg:err.message});
+    if(newcontact){
+        res.json({msg:"Thank You.We will contact you soon"})
+    }
+})
+
+    
+    }

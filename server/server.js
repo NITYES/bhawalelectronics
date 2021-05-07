@@ -47,7 +47,7 @@ process.on('uncaughtException',(error)=>{
 })
 
   //port
-  const PORT=process.env.PORT||8000;
+  const PORT=process.env.ECOMMERCE_PORT||8000;
 
   
 

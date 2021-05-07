@@ -22,7 +22,7 @@ const Register = ({history}) => {
     //
     e.preventDefault();
     const config = {
-      url: process.env.REACT_APP_REGISTER_REDIRECT_URL,
+      url: "http://www.bhawalelectronics.com/register/complete",
       handleCodeInApp: true,
     };
 

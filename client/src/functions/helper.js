@@ -1,3 +1,5 @@
+
+
 exports.slugify=(value,obj)=>{
    value.trim(value)
    let splits=[" ","/",".",":",",","-","_","|","\\"];

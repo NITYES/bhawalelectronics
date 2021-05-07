@@ -1,0 +1,48 @@
+.form{
+    width: 100%;
+    background-color: #ccc;
+    padding: 20px;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.label{
+    width: 30%;
+    padding: 5px;
+}
+.input{
+    width: 70%;
+    padding: 5px;
+}
+
+.cart-list{
+    display: inline-block;
+    width: 70%;
+    background-color: white;
+    padding: 10px;
+}
+.error{
+    color: #c3003c;
+    float: right;
+    width: 100%;
+    text-align: center;
+}
+
+.button{
+    width: 70%;
+    margin: 5px 30%;
+    text-align: center;
+    padding: 5px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #c3003c;
+    cursor: pointer;
+}
+
+.cart-empty{
+    color: #c3003c;
+}

@@ -66,10 +66,10 @@ const dispatch=useDispatch();
       <div className="col-md-7">
 
         {images && images.length ? (
-          <Carousel>
+          <Carousel autoPlay={true} infiniteLoop={true} >
             {images.map(img=>{
             return  <div style={{background:"white",display:"flex",justifyContent:"center",alignItems:"center",height:"100%"}}>
-              <div style={{width:"500px",height:"500px"}} ><img style={{width:"100%",height:"100%",display:"block"}} src={img.url} /></div>
+              <div  ><img style={{width:"100%",height:"100%",display:"block"}} src={img.url} /></div>
             </div>
             })}
           </Carousel>

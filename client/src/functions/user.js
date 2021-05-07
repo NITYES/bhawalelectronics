@@ -34,3 +34,8 @@ export const userCart=async (cart,authtoken)=>{
           }
       })
    }
+
+
+   export const saveContact=async (contact)=>{
+    return  await axios.post(`/user/contact`,{contact})
+   }

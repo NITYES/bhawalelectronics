@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {loadMenu} from '../../functions/menu'
 import "./menu.css"
 import tv from '../../images/lg-washing-1.png'
+import { Link } from 'react-router-dom';
 const Menubar=()=>{
 
 const[menu,setMenu]=useState([]);
@@ -52,6 +53,9 @@ if(localStorage.getItem("menu")==null){
                      
                 </li>
             })}
+            <Link to="/contact">
+            <li className="menu-item contact-link"><h6>Contact Us</h6></li>
+            </Link>
             </ul>
         </div>
     )

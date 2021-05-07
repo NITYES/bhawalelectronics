@@ -20,6 +20,7 @@ padding: 0;
 .menu-item{
     list-style: none;
     height: 50px;
+    cursor: pointer;
 }
 
 .menu-item h6{
@@ -127,7 +128,9 @@ display: block;
       display: none;
   }
 
-
+.contact-link{
+    cursor: pointer;
+}
 
   @media screen and (max-width: 700px) {
     #menubar{

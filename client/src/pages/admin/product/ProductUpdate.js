@@ -146,7 +146,6 @@ return(
                        {loading?
                         <LoadingOutlined className="h1 text-danger"/>
                         :(<h4>Product Upload</h4>)}
-                        {JSON.stringify(values)}
                         <hr/>
                   <div className="p-3">
                        <FileUpload 

@@ -23,12 +23,9 @@ import Menubar from "./Menubar";
 
 import './header.css'
 
-const { SubMenu, Item, ItemGroup } = Menu;
+const {  Item} = Menu;
 
 const Header = () => {
-  const [current, setCurrent] = useState("");
-  const [visible, setVisible] = useState(true);
-  const [searchIcon, setSearchIcon] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   let { user, cart, search } = useSelector((state) => {
@@ -116,7 +113,7 @@ if(e.target.innerWidth <=700){
        href="/" 
        style={{color:"white",
           fontSize:"25px",
-            lineHeight:"50px"}}>Bhawalelectronic</a>
+            lineHeight:"50px"}}>Bhawalelectronics</a>
       <div id="menu-btn"  onClick={()=>{
         setClick(!click)
       }}>

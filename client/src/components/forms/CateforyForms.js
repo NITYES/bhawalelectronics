@@ -15,7 +15,7 @@ function CateforyForms({name,handleSubmit,setName}) {
         />
       </div>
       <br/>
-      <button className='btn btn-primary'>Save</button>
+      <button  className='btn btn-primary'>Save</button>
     </form>
     )
 }
