@@ -1,5 +1,5 @@
 import React from 'react'
-import {slugify} from '../../functions/helper'
+import {Newslugify} from '../../functions/helper'
 
 
 const MenuDisplayCard=({cat})=>{
@@ -11,7 +11,7 @@ return(
     </div>
     <div style={{height:"50px",textAlign:"center"}}>
     <p style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100%",background:"#ccc"}}><span style={{background:"white",color:"black",display:"flex",justifyContent:"center",alignItems:"center",width:"30px",borderRadius:"10px"}}>{cat.total}</span></p>
-    <p style={{background:"#c3003c"}}><a style={{color:"white",fontSize:"20px"}} href={`/products/${slugify(cat.sub,{join:"-"} )}`}>{cat.sub}</a></p>
+    <p style={{background:"#c3003c"}}><a style={{color:"white",fontSize:"20px",textTransform:"uppercase"}} href={`/products/${Newslugify(cat.sub,{join:"-",case:"uppercase"} )}`}>{cat.sub}</a></p>
     </div>
 </div>
 )

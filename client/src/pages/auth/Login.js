@@ -165,7 +165,7 @@ roleBasedRedirect(res)
 
   return (
     <div>
-      <div className="container p-5">
+      <div className=" p-5">
         <div className="row">
           <div className="col-md-6 offset-md-3">
             {loading ? (
@@ -186,7 +186,7 @@ roleBasedRedirect(res)
               Login with Google
             </Button>
 
-            <Link className='danger' to="/forgot/password">Forgot Password</Link>
+            {/* <Link className='danger' to="/forgot/password">Forgot Password</Link> */}
             <div>
             <Link className='danger' to="/register">Sign Up</Link>
             </div>

@@ -11,8 +11,7 @@ import RatingModal from '../modal/RatingModal';
 import {showAverage} from '../../functions/rating';
 import _ from 'lodash';
 import {useSelector,useDispatch} from 'react-redux'
-import {slugify} from '../../functions/helper'
-import Carousels from "../home/Carousel";
+import {Newslugify} from '../../functions/helper'
 
 
 
@@ -88,21 +87,21 @@ const dispatch=useDispatch();
       </div>
       
            {product&&product.category&& <div className="col-md-5">
-           <h3 className=" p-3" style={{background:"#c3003c", color:"white"}} >{slugify(title,{case:"uppercase",join:" "})}</h3>
+           <h3 className=" p-3" style={{background:"#c3003c", color:"white"}} >{Newslugify(title,{case:"uppercase",join:" "})}</h3>
        <Breadcrumb>
     <Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
     <Breadcrumb.Item>
-      <a href={`/products/${slugify(category,{join:"-"} )}`}>{slugify(category,{case:"uppercase",join:" "})}</a>
+      <a href={`/products/${Newslugify(category,{join:"-"} )}`}>{Newslugify(category,{case:"uppercase",join:" "})}</a>
     </Breadcrumb.Item>
     <Breadcrumb.Item>
-    <a href={`/products/${slugify(subs,{join:"-"})}`}>{slugify(subs,{case:"uppercase",join:" "})}</a>
+    <a href={`/products/${Newslugify(subs,{join:"-"})}`}>{Newslugify(subs,{case:"uppercase",join:" "})}</a>
 
       </Breadcrumb.Item>
     <Breadcrumb.Item>
-    <a href={`/products/${slugify(item,{join:"-"})}`}>{slugify(item,{case:"uppercase",join:" "})}</a>
+    <a href={`/products/${Newslugify(item,{join:"-"})}`}>{Newslugify(item,{case:"uppercase",join:" "})}</a>
 
       </Breadcrumb.Item>
-    <Breadcrumb.Item>{slugify(title,{case:"uppercase",join:" "})}</Breadcrumb.Item>
+    <Breadcrumb.Item>{Newslugify(title,{case:"uppercase",join:" "})}</Breadcrumb.Item>
   </Breadcrumb>  
         
      {product && product.ratings && product.ratings.length > 0 ? showAverage(product):

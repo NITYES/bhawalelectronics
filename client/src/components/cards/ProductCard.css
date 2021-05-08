@@ -58,6 +58,7 @@ margin: auto;
     padding: 0 10px;
     color: #c40e0e;
     font-size: 1em;
+    text-transform: uppercase;
 }
 
 .details .price{

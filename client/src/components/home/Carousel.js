@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import {Carousel} from 'antd'
-import slider1 from '../../images/slider1.jpg'
-import slider2 from '../../images/slider2.jpg'
-import slider3 from '../../images/slider3.jpg'
+import slider1 from '../../images/image8.png'
+import slider2 from '../../images/image9.png'
+import slider3 from '../../images/image10.png'
 
 import './carousel.css'
 
@@ -15,11 +14,11 @@ const Carousels=({images})=>{
         image=[{public_id:1,url:slider1},{public_id:2,url:slider2},{public_id:3,url:slider3}]
  }
     return (
-           <div className="slide"  >
-               <figure id="figure" className="figure">
+           <div className="slides"  >
+               <figure  className="figures">
 
      {
-         image.map(img=><img key={img.public_id} id="img" className="images" src={img.url}></img>)
+         image.map(img=><img key={img.public_id}  id="imagess" src={img.url}></img>)
      }
 
  </figure>

@@ -2,7 +2,7 @@ import React from 'react'
 
 function CateforyForms({name,handleSubmit,setName}) {
     return (
-        <form onSubmit={handleSubmit}>
+        <form style={{background:"white"}} onSubmit={handleSubmit}>
       <div className="form=group">
         <label>Name</label>
         <input

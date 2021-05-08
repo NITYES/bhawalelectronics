@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import {
   createSub,
   getSubs,
-  getSub,
   removeSub,
 } from "../../../functions/sub";
 import {EditOutlined,DeleteOutlined} from '@ant-design/icons'

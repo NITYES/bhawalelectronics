@@ -3,6 +3,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {Link} from  'react-router-dom';
 import ProductCardInCheckout from '../components/cards/ProductCardInCheckout.js';
 import {userCart} from '../functions/user'
+import './Cart.css'
 
 const Cart=({history})=>{
 
@@ -33,7 +34,7 @@ userCart(cart,user.token).then(res=>{
     }
 
     const showCartElement=()=>(
-        <table className="table table-bordered">
+        <table className="table table-bordered ">
                 <thead className="thead-light"> 
                      <tr>
                          <th scope="col"> Image</th>
@@ -70,14 +71,14 @@ userCart(cart,user.token).then(res=>{
           <div className="col-md-4">
               <h4>Order Summary</h4>
               <hr/>
-              <p>product</p>
+              <p>Product</p>
               {cart.map((c,i)=>(
                   <div key={i}>
-                         <p>{c.title} x {c.count}= ₹ {c.price*c.count}</p>
+                         <p>{c.title} x {c.count}= Rs. {c.price*c.count}</p>
                   </div>
               ))}
               <hr/>
-               Total : <b>₹ {getTotal()}</b>
+               Total : <b>Rs. {getTotal()}</b>
               <hr/>
               {/* {
                   user?(

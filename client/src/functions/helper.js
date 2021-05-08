@@ -1,6 +1,6 @@
 
 
-exports.slugify=(value,obj)=>{
+export const Newslugify=(value,obj)=>{
    value.trim(value)
    let splits=[" ","/",".",":",",","-","_","|","\\"];
    let splitter=splits[splits.map(s=>value.includes(s)).indexOf(true)];
@@ -25,6 +25,6 @@ exports.slugify=(value,obj)=>{
 }
 
 
-exports.countProduct=async(product)=>{
+export const countProduct=async(product)=>{
    return product.length
 }

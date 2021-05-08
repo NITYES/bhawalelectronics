@@ -29,6 +29,10 @@
 .shop p{
     text-align: center;
 }
+
+.shop-div-a{
+    text-transform: uppercase !important;
+}
 .shop div{
     display: flex;
     flex-direction: column;
@@ -122,8 +126,8 @@ padding: 10px;
 
     .news-settler div {
       margin:auto;
-      width: 500px;
-        background-color: rgb(22, 41, 41);
+      width: 100%;
+        background-color: rgb(13, 107, 107);
         
     }
     .news-settler div input{

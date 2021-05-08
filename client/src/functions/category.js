@@ -1,6 +1,6 @@
 import axios from './axios';
 import { isNumber } from 'lodash';
-import {  slugify } from '../functions/helper';
+import {  Newslugify } from '../functions/helper';
 
 export const getCategories=async ( )=>{
     return await axios.get(`/categories`);
@@ -45,7 +45,7 @@ export const getCategories=async ( )=>{
        if(isNumber(_id)){
            field=_id
        }else{
-           field=slugify(_id,{join:"-"})
+           field=Newslugify(_id,{join:"-"})
        }
     return await axios.get(`/category/subs/${field}`)
    

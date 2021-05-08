@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import  './footer.css';
 import {getCategoryCount} from '../../functions/product'
-import {slugify} from '../../functions/helper'
+import {Newslugify} from '../../functions/helper'
 
 
 
@@ -33,7 +33,7 @@ return (
                           <p>SHOP BY CATEGORY</p>
                           <div>
                               {subs.map(s=>{
-                                  return <a  href={`/products/${slugify(s.sub,{join:"-"} )}`}>{s.sub}</a>
+                                  return <a  href={`/products/${Newslugify(s.sub,{join:"-"} )}`}><span style={{textTransform:"uppercase"}}>{s.sub}</span></a>
 
                               })}
                           </div>

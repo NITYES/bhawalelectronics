@@ -27,7 +27,7 @@ visible={drawer}>
                           {p.images ?(
                               <>
                               <img style={{width:"100px",height:"100px"}} src={p.images[0].url} />
-                              <p>{p.title}x{ p.count}</p>
+                              <p>{p.title} x { p.count}</p>
                               </>
                           ):(
                             <>

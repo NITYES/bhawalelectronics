@@ -1,11 +1,11 @@
-.slide{
+.slides{
     width: 100%;
-    background-color: blue;
     overflow: hidden;
-    height: 700px;
+    margin-top: 0%;
+    padding: 0%;
 }
 
- .figure{
+ .figures{
    width: 300%;
       height: 100%;
       margin: 0;
@@ -21,7 +21,9 @@
  position:relative;   
 }
 
- .images{
+  .slides #imagess{
+    margin-top: 0%;
+    padding: 0%;
    width: 33.3333%;
   height: 100%;
   float: left;
@@ -58,7 +60,5 @@
 }
 
 @media screen and (max-width: 700px) {
- .slide{
-   height: 300px;
- }
+
 }

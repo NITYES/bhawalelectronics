@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getProducts,getProductsCount } from "../../functions/product";
+import { getProducts } from "../../functions/product";
 import ProductCard from "../cards/ProductCard";
 import LoadingCard from '../cards/LoadingCard';
 import {Pagination} from 'antd';

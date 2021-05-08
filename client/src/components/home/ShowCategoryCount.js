@@ -10,11 +10,6 @@ const ShowCategoryCount=()=>{
 const[category,setCategory]=useState([]);
 const[loading,setLoading]=useState(false)
 useEffect(()=>{
-   if(localStorage.getItem('subs')){
-
-    setCategory(JSON.parse(localStorage.getItem('subs')))
-
-   }else{
     setLoading(true)
     getCategoryCount().then(res=>{
         setCategory(res.data);
@@ -23,11 +18,10 @@ useEffect(()=>{
     }).catch((err)=>{
         setLoading(false);
     })
-   }
 },[])
 
     return(
-        <div style={{width:"100%",background:"#ccc",height:"auto",marginBottom:"50px"}}>
+        <div style={{width:"100%",height:"auto",marginBottom:"50px"}}>
                   {loading?<div>...loading</div>:<div>
                       
                           {category&&<div style={{width:"100%",height:"100%",display:"flex",flexDirection:"row",flexWrap:"wrap",justifyContent:"center"}}>

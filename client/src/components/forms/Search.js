@@ -2,7 +2,7 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import {SearchOutlined} from '@ant-design/icons'
-import {slugify} from '../../functions/helper'
+import {Newslugify} from '../../functions/helper'
 
 const Search=()=>{
     let dispatch=useDispatch();
@@ -24,7 +24,7 @@ const Search=()=>{
 //   e.preventDefault()
          //
          if(text){
-            history.push(`/products/${slugify(text,{join:"-"})}`)
+            history.push(`/products/${Newslugify(text,{join:"-"})}`)
          }
      }
 

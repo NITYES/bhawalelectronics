@@ -13,6 +13,7 @@ const contactSchema=new mongoose.Schema({
         type:Number,
         required:true
     },
+    message:String,
     cart:{
         type:Array,
         default:[],

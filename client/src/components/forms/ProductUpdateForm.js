@@ -1,6 +1,6 @@
 import React from 'react'
 import { Select } from 'antd'
-import { slugify } from '../../functions/helper'
+import { Newslugify } from '../../functions/helper'
 const { Option } = Select
 
 
@@ -155,8 +155,8 @@ const ProductUpdateForm = ({
                     {
                         categories.length > 0 && categories.map((c) => (<option
                             key={c._id}
-                            value={slugify(c.name,{case:"capitalize",join:" "})} >
-                            {slugify(c.name,{case:"capitalize",join:" "})}
+                            value={Newslugify(c.name,{case:"capitalize",join:" "})} >
+                            {Newslugify(c.name,{case:"capitalize",join:" "})}
                         </option>))
                     }
                 </select>
@@ -179,8 +179,8 @@ const ProductUpdateForm = ({
                         subOption.length && subOption.map((s) =>
                             <option
                                 key={s._id}
-                                value={slugify(s.name,{case:"capitalize",join:" "})}
-                            > {slugify(s.name,{case:"capitalize",join:" "})}</option>)
+                                value={Newslugify(s.name,{case:"capitalize",join:" "})}
+                            > {Newslugify(s.name,{case:"capitalize",join:" "})}</option>)
                     }
 
                 </select>
@@ -204,8 +204,8 @@ const ProductUpdateForm = ({
                         itemOption.length && itemOption.map((s) =>
                             <option
                                 key={s._id}
-                                value={slugify(s.name,{case:"capitalize",join:" "})}
-                            > {slugify(s.name,{case:"capitalize",join:" "})}</option>)
+                                value={Newslugify(s.name,{case:"capitalize",join:" "})}
+                            > {Newslugify(s.name,{case:"capitalize",join:" "})}</option>)
                     }
 
                 </select>

@@ -7,7 +7,6 @@ import {
   getCategory
   
 } from "../../../functions/category";
-import { useParams } from "react-router-dom";
 import CategoryForm from '../../../components/forms/CateforyForms'
 
 //we can access history and match because it is wrap inside switch

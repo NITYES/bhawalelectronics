@@ -9,15 +9,12 @@ const[menu,setMenu]=useState([]);
 
 useEffect(()=>{
 
-if(localStorage.getItem("menu")==null){
     loadMenu().then(res=>{
         setMenu(res.data);
         localStorage.setItem("menu",JSON.stringify(res.data))
     
     })
-}else{
-    setMenu(JSON.parse(localStorage.getItem("menu")));
-}
+
 
 },[])
 
@@ -30,11 +27,11 @@ if(localStorage.getItem("menu")==null){
                          <ul className="menu-item-block"> <div className="sub-container">
 
                          {menuitem.subCategory.length >0&&
-                                  menuitem.subCategory.map((submenu)=>{
-                                     return <ul className="sub"><a href={`/products/${submenu.slug}`} className="sub-heading">{submenu.name}</a>
+                                  menuitem.subCategory.map((submenu,i)=>{
+                                     return <ul key={i} className="sub"><a href={`/products/${submenu.slug}`} className="sub-heading">{submenu.name}</a>
                                                 {submenu.item.length>0&&
-                                                  submenu.item.map(item=>{
-                                                      return <li className="item"><a href={`/products/${item.slug}`}>{item.name}</a></li>
+                                                  submenu.item.map((item,i)=>{
+                                                      return <li key={i} className="item"><a href={`/products/${item.slug}`}>{item.name}</a></li>
                                                   })
 
                                                 }    

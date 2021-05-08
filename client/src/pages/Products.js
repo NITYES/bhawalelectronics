@@ -240,7 +240,7 @@ useEffect(()=>{
              range
              value={price}
              onChange={handleSlider}
-             max="100996"
+             max="10099633"
            />
          </div>
        </SubMenu>
@@ -256,7 +256,7 @@ useEffect(()=>{
          }
        >
          <div style={{marginTop:"-10px"}}>
-           {showStars()};
+           {showStars()}
 
            </div>
        </SubMenu>
@@ -272,7 +272,7 @@ useEffect(()=>{
          }
        >
          <div className="pl-4 pr-4" style={{marginTop:"-10px"}}>
-           {showColors()};
+           {showColors()}
 
            </div>
        </SubMenu>
@@ -288,7 +288,7 @@ useEffect(()=>{
          }
        >
          <div className="pl-4 pr-4" style={{marginTop:"-10px"}}>
-           {showShipping()};
+           {showShipping()}
 
            </div>
        </SubMenu>
@@ -310,7 +310,7 @@ useEffect(()=>{
     </>
   ))}
  <nav   className=" row text-center p-2 mt-2" style={{display:"block",width:"100%"}}>
-   <a href="#top">
+   <a >
    <Pagination
     current={page}
     pageSize={10}

@@ -3,6 +3,7 @@ import ModalImage from 'react-modal-image';
 import laptop from '../../images/laptop.png';
 import {useDispatch} from "react-redux"
 import { toast } from 'react-toastify';
+import './ProductCardInCheckout.css'
 import {CheckCircleOutlined,CloseCircleOutlined,CloseOutlined} from '@ant-design/icons'
 
 
@@ -104,7 +105,7 @@ if(count>p.quantity){
     return (
         <tbody>
             <tr>
-                <td>
+                <td className="td-image">
                     <div style={{ width: "100px", height: "auto" }}>
                         {p.images.length ? (
                             <ModalImage small={p.images[0].url} large={p.images[0].url} />) : (
@@ -112,22 +113,23 @@ if(count>p.quantity){
                         )}
                     </div>
                 </td>
-                <td>{p.title}</td>
-                <td>{p.price}</td>
-                <td>{p.brand}</td>
-                <td>
+                <td className="td-100" style={{textTransform:"uppercase"}}>{p.title}</td>
+                <td className="td-100"><span className="small">Rs. </span>{p.price}</td>
+                <td className="td-100">{p.brand}</td>
+                <td className="td-100">
                     <select onChange={handleColorChange} name="color" className="form-control">
                         {p.color ? <option>{p.color}</option> : <option value={p.color}>Select</option>}
                         {colors.filter((c) => c !== p.color).map((c) => <option key={c} value={c}>{c}</option>)}
                     </select>
                 </td>
-                <td className="text-center">
+                <td className="text-center td-100">
                     <input className="form-control" value={p.count} onChange={handleQuantityChange} type="number" />
                     </td>
-                <td className="text-center">
+                <td className="text-center td-100">
+                    <span className="small">Shipping  </span>
                     {p.shipping=="Yes"?<CheckCircleOutlined className="text-success" />:<CloseCircleOutlined className="text-danger" />}
                 </td>
-                <td className="text-danger text-center"><CloseOutlined onClick={handleDelete}  className="pointer"/></td>
+                <td className="text-danger text-center td-100"><CloseOutlined onClick={handleDelete}  className="pointer"/></td>
             </tr>
         </tbody>
     );

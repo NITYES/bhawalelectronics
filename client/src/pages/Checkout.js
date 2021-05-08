@@ -15,7 +15,6 @@ const {user}=useSelector((state)=>({...state}))
 
 useEffect(()=>{
 getUserCart(user.token).then((res)=>{
-    console.log('user cart res',JSON.stringify(res.data,null,4));
     setProducts(res.data.products);
     setTotal(res.data.cartTotal)
 })
@@ -43,7 +42,6 @@ const emptyCart=()=>{
 }
 
 const saveAddressToDb=()=>{
-  console.log(address)
   saveUserAddress(address,user.token)
   .then(res=>{
       console.log(res.data)

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import {Link} from 'react-router-dom'
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { getProduct,updateProduct} from "../../../functions/product";
@@ -14,7 +13,6 @@ import {
   import {getItemsBySub} from '../../../functions/item'
   import FileUpload from '../../../components/forms/FileUpload'
   import {LoadingOutlined} from '@ant-design/icons'
-  import {useParams} from 'react-router-dom'
 
 //props.match.params.slug
 //let {slug} =useParams();

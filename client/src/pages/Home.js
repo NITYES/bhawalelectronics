@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Jumbotrons from '../components/cards/Jumbotrons'
+import React from "react";
 import NewArrival from "../components/home/NewArrival";
 import BestSellers from "../components/home/BestSellers";
-import CategoryList from '../components/category/CategoryList'
-import SubList from '../components/sub/SubList'
 import Carousel from '../components/home/Carousel'
 import ShowCategoryCount from '../components/home/ShowCategoryCount'
 
@@ -13,7 +10,7 @@ import ShowCategoryCount from '../components/home/ShowCategoryCount'
 function Home() {
 
   return (
-    <div className="marginheader" style={{background:"#ccc"}}>
+    <div className="marginheader" style={{background:"white"}}>
     
 {/* <div className="jumbotron text-danger h1 font-weight-bold text-center">
   <Jumbotrons text={['Latest Product','New Arrivals','Best Sellers']}/>

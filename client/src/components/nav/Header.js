@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Menu, Badge, Avatar, Dropdown, Modal } from "antd";
+import { Menu, Badge, Avatar, Dropdown } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import {
@@ -114,6 +114,14 @@ if(e.target.innerWidth <=700){
        style={{color:"white",
           fontSize:"25px",
             lineHeight:"50px"}}>Bhawalelectronics</a>
+            <Link className="cart-small" to="/cart">
+          <Badge count={cart.length} offset={[-2, 5]}>
+            <Avatar
+              style={{ background: "none",fontSize:"25px" }}
+              icon={<ShoppingCartOutlined />}
+            />
+          </Badge>
+        </Link>
       <div id="menu-btn"  onClick={()=>{
         setClick(!click)
       }}>

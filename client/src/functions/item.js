@@ -1,7 +1,7 @@
 
 import axios from './axios';
 import {isNumber} from 'lodash'
-import {slugify} from '../functions/helper'
+import {Newslugify} from '../functions/helper'
 
    export const createItem=async (sub,authtoken)=>{
 
@@ -27,7 +27,7 @@ import {slugify} from '../functions/helper'
      if(isNumber(subId)){
                field=subId
      }else{
-         field=slugify(subId,{join:"-"})
+         field=Newslugify(subId,{join:"-"})
      }
     return await axios.get(`/items/${field}`);
    
