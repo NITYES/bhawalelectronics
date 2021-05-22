@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import {EditOutlined,DeleteOutlined} from '@ant-design/icons'
 import {getSubs} from '../../../functions/sub';
-import {createItem,getItems} from '../../../functions/item'
+import {createItem,getItems,removeItem} from '../../../functions/item'
 
 import CateforyForms from "../../../components/forms/CateforyForms";
 
@@ -28,13 +28,11 @@ useEffect(()=>{
 },[])
 
 const loadSubs=()=>getSubs().then(c=>{
-    console.log(c.data)
     setSubs(c.data)})
 
 
     //load items 
     const loadItems=()=>getItems().then(i=>{
-        console.log(i.data)
         setItems(i.data)}).catch((error)=>{
             console.log(error.response.data)
         })
@@ -66,23 +64,22 @@ const loadSubs=()=>getSubs().then(c=>{
       //HANDLE REMOVE ITEM 
       const handleRemove=async (slug)=>{
         let answer=window.confirm("Do you want to delete ?");
-        // console.log(answer,slug)
-        // if(answer){
-        //     setLoading(true)
-        //     removeSub(slug,user.token)
-        //     .then((res)=>{
-        //         setLoading(false);
-        //         toast.success(`${res.data.name} deleted`);
-        //         loadSubs();
-        //     }
-        //     )
-        //     .catch(err=>{
-        //         if(err.response.status===400) {
-        //             setLoading(false)
-        //             toast.error(err.response.data)
-        //         }
-        //     })
-        // }
+        if(answer){
+            setLoading(true)
+            removeItem(slug,user.token)
+            .then((res)=>{
+                setLoading(false);
+                toast.success(`${res.data.name} deleted`);
+                loadItems();
+            }
+            )
+            .catch(err=>{
+                if(err.response.status===400) {
+                    setLoading(false)
+                    toast.error(err.response.data)
+                }
+            })
+        }
     }
       
 

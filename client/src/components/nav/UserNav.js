@@ -12,6 +12,9 @@ const UserNav =()=>{
         <li className="nav-item" className="nav-link">
                   <Link to="/user/history">History</Link>
         </li>
+        <li className="nav-item" className="nav-link">
+                  <Link to="/user/profile">My Profile</Link>
+        </li>
         <li className="nav-item">
                   <Link to="/user/password" className="nav-link"> Change Password</Link>
         </li>

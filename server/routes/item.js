@@ -5,7 +5,8 @@ const router=express.Router();
 //import controller function
 const {create,
     list,
-    getItemsBySub
+    getItemsBySub,
+    remove
     
 }=require('../controllers/item');
 
@@ -18,7 +19,7 @@ router.get('/items',list);
 router.get('/items/:subId',getItemsBySub)
 // router.get('/sub/:slug',read);
 // router.put('/sub/:slug',authCheck,adminCheck,update);
-// router.delete('/sub/:slug',authCheck,adminCheck,remove);
+router.delete('/item/:slug',authCheck,adminCheck,remove);
 
 
 module.exports=router;

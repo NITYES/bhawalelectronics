@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 import { Menu, Badge, Avatar, Dropdown } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -25,7 +25,7 @@ import './header.css'
 
 const {  Item} = Menu;
 
-const Header = () => {
+const Header = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   let { user, cart, search } = useSelector((state) => {
@@ -94,11 +94,11 @@ if(e.target.innerWidth <=700){
        <Link to='/admin/dashboard'>Admin Dashboard</Link>
      </Item>
      }
-{/* {
+{
        user&&user.role=="subscriber" &&<Item key="4" icon={<HistoryOutlined />}>
        <Link to='/user/dashboard'>User Dashboard</Link>
      </Item>
-     } */}
+     }
 
     </Menu>
   );
@@ -113,7 +113,7 @@ if(e.target.innerWidth <=700){
        href="/" 
        style={{color:"white",
           fontSize:"25px",
-            lineHeight:"50px"}}>Bhawalelectronics</a>
+            lineHeight:"50px"}}>Bhawal Electronics</a>
             <Link className="cart-small" to="/cart">
           <Badge count={cart.length} offset={[-2, 5]}>
             <Avatar
@@ -158,7 +158,9 @@ click?
 <Menubar />
 </div>:""}
 </div>
-{console.log(click)}
+<div>
+  {props.children}
+</div>
     </div>
   );
 };

@@ -60,6 +60,7 @@ const UserRoute=lazy(()=>import('./components/routes/UserRoutes'));
 const AdminRoute=lazy(()=>import('./components/routes/AdminRoutes')); 
 const CategoryUpdate=lazy(()=>import('./pages/admin/category/CategoryUpdate')); 
 const SubUpdate=lazy(()=>import('./pages/admin/sub/SubUpdate')); 
+const Slider=lazy(()=>import('./pages/admin/Slider')); 
 const ProductCreate=lazy(()=>import('./pages/admin/product/ProductCreate')); 
 const ProductUpdate=lazy(()=>import('./pages/admin/product/ProductUpdate')); 
 const AllProducts=lazy(()=>import('./pages/admin/product/AllProducts')); 
@@ -74,6 +75,10 @@ const Footer=lazy(()=>import('../src/components/footer/Footer'));
 const SideDrawer=lazy(()=>import('./components/drawer/SideDrawer')); 
 const Checkout=lazy(()=>import('./pages/Checkout')); 
 const UserDashBoard=lazy(()=>import('./pages/user/UserDashBoard')); 
+const Profile=lazy(()=>import('./pages/user/Profile')); 
+const Payement=lazy(()=>import('./pages/user/Payement')); 
+
+
 const Contact=lazy(()=>import('./pages/Contact')); 
 
 
@@ -104,6 +109,8 @@ function App() {
                 token: idTokenResult.token,
                 role: res.data.role,
                 _id: res.data._id,
+                address:res.data.address,
+                mobile:res.data.mobile
               },
             });
 
@@ -139,6 +146,10 @@ function App() {
         <UserRoute exact path='/user/wishlist' component={Wishlist} />
         <UserRoute exact path='/user/checkout' component={Checkout} />
         <UserRoute exact path='/user/dashboard' component={UserDashBoard} />
+        <UserRoute exact path='/user/profile' component={Profile} />
+        <UserRoute exact path='/user/payement' component={Payement} />
+
+
 
 
         <AdminRoute exact path='/admin/dashboard' component={AdminDashboard} />
@@ -149,6 +160,8 @@ function App() {
 
         <AdminRoute exact path='/admin/sub' component={SubCreate} />
         <AdminRoute exact path='/admin/item' component={ItemCreate} />
+        <AdminRoute exact path='/admin/slider' component={Slider} />
+
 
         <AdminRoute
           exact path='/admin/sub/:slug'

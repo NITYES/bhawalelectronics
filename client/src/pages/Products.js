@@ -3,7 +3,7 @@ import {
   fetchProductsByFilter,
 } from "../functions/product";
 import ProductCard from "../components/cards/ProductCard";
-import { Menu, Slider ,Checkbox,Radio,Pagination} from "antd";
+import { Menu, Slider ,Checkbox,Radio,Pagination, Badge} from "antd";
 import { BgColorsOutlined, DollarOutlined,StarOutlined} from "@ant-design/icons";
 import { getCategories } from "../functions/category";
 import { getSubs } from "../functions/sub";
@@ -48,7 +48,85 @@ const Products = ({match}) => {
  const[filter,setFilter]=useState(false)
 
 const slug=match.params.slug
-  console.log(slug)
+
+
+
+//dispaly filter option on top
+const showFilterOptions=()=>{
+  const filterpairs=Object.entries(filterOption);
+  console.log(filterpairs);
+   return filterpairs.map((option,i)=>{
+
+
+//color
+    if(option[0]=="color"&& option[1]!==""){
+      return <Badge
+      count="X"
+       key={option[0]}
+       onClick={() => {
+         removeFilterOptions(option[0])
+       }}
+       style={{cursor:"pointer",margin:"0 5px"}}>
+<span style={{background:"#00c368",padding:"5px",margin:"10px"}} >{option[1]}</span>
+</Badge>
+    }
+
+    //shipping
+    if(option[0]=="shipping"&&option[1]!==""){
+      return <Badge
+      count="X"
+       key={option[0]}
+       onClick={() => {
+        removeFilterOptions(option[0])
+
+       }}
+       style={{cursor:"pointer",margin:"0 5px"}}>
+<span style={{background:"#00c368",padding:"5px",margin:"10px"}} >
+  {option[1]} {" "}<i class="fa fa-truck" aria-hidden="true"></i></span>
+</Badge>
+    }
+//price
+if(option[0]=="price"&&option[1]!==""){
+  return <Badge
+  count="X"
+   key={option[0]}
+   onClick={() => {
+    removeFilterOptions(option[0])
+
+   }}
+   style={{cursor:"pointer",margin:"0 5px"}}>
+<span style={{background:"#00c368",padding:"5px",margin:"10px"}} >{option[1][0] } - { option[1][1]}</span>
+</Badge>
+}
+
+//start
+if(option[0]=="star"&&option[1]!==""){
+  return <Badge
+  count="X"
+   key={option[0]}
+   onClick={() => {
+     removeFilterOptions(option[0])
+   }}
+   style={{cursor:"pointer",margin:"0 5px",fontSize:"10px"}}
+>
+<span style={{background:"#00c368",padding:"10px",margin:"10px"}} >
+  {option[1]} <i className="fa fa-star" aria-hidden="true"></i></span>
+</Badge>
+}
+    
+  })
+
+
+}
+
+//handle remove filter options 
+
+const removeFilterOptions=(option)=>{
+  setfilterOptions({...filterOption,[option]:""})
+}
+
+
+
   //fetch product ..its unversal
   const fetchProducts = () => {
     setLoading(true)
@@ -215,12 +293,19 @@ useEffect(()=>{
       <div className="row">
         <div className="col-md-3" style={{margin:"0px",padding:"0px"}}>
 
-           <button 
+          <div className="filtercontainer">
+          <button 
            onClick={()=>{
              setFilter(!filter)
            }}
            className="filter-btn">{filter?"x":"Filter"}</button>
-            <h4 className="text-danger filter-heading">FILTER </h4>
+            <h4 className="text-danger filter-heading" >FILTER </h4>
+            <div className="filteroption">
+              {
+                showFilterOptions()
+              }
+            </div>
+          </div>
         <hr/>
      {
        filter?<Menu className="filter" defaultOpenKeys={["1", "2","3","4","5","6","7"]} mode="inline">

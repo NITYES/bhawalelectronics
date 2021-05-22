@@ -7,36 +7,45 @@
 }
 
 @media screen and (max-width: 700px) {
-    
-    /* .filter{
-        display: none;
-        
-    } */
- 
+
 .filter-btn{
-    cursor: pointer;
-display: block;
-position: fixed;
+display: inline !important;
 padding: 0 10px;
-cursor: pointer;
-top: 100px;
-z-index: 990;
 color: white !important;
-background-color: #c3003c !important;
+background-color: #00c368 !important;
  outline: none !important;
  border: none !important;
 }
 
+.filteroption{
+}
+
+
+
+.filtercontainer{
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    position: fixed;
+    cursor: pointer;
+    top: 100px;
+    z-index: 990;
+    background-color: #ffffff;
+}
+
+.filteroption span{
+    padding: 0 !important;
+}
 
 .filter-heading{
-
     display: none;
 }
 
 
 .filter{
     position: fixed;
-    top: 122px;
+    top: 140px;
     width: 50% !important;
     z-index: 1000 !important;
 }

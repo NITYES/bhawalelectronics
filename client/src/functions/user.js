@@ -10,6 +10,16 @@ export const userCart=async (cart,authtoken)=>{
    }
 
 
+
+   export const saveUserProfile=async (value,authtoken)=>{
+    return  await axios.post(`/user/profile`,value,{
+          headers:{
+              authtoken
+          }
+      })
+   }
+
+
    export const getUserCart=async (authtoken)=>{
     return  await axios.get(`/user/cart`,{
           headers:{

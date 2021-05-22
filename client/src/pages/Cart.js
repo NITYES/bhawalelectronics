@@ -39,7 +39,7 @@ userCart(cart,user.token).then(res=>{
                      <tr>
                          <th scope="col"> Image</th>
                          <th scope="col"> Title</th>
-                         <th scope="col"> price</th>
+                         <th scope="col"> Price</th>
                          <th scope="col"> Brand</th>
                          <th scope="col"> color</th>
                          <th scope="col"> Quantity</th>
@@ -99,6 +99,11 @@ userCart(cart,user.token).then(res=>{
                           Login To Proceed</Link>
                   </button>)
               } */}
+
+            <Link to="/contact">
+            <button className="btn btn-lg btn-primary">Place Order</button>
+            </Link>
+
               </div>
 
       </div>

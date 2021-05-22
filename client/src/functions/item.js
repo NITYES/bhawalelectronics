@@ -14,6 +14,17 @@ import {Newslugify} from '../functions/helper'
    }
 
 
+   export const removeItem=async (itemslug,authtoken)=>{
+
+    return await axios.delete(`/item/${itemslug}`,{
+        headers:{
+            authtoken:authtoken
+        }
+    })
+   
+   }
+
+
 
    export const getItems=async ( )=>{
 

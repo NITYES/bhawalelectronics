@@ -4,7 +4,6 @@ const Sub=require('../models/sub');
 const {Capitalize,isValidObjectIds}=require('../helperfunction');
 const { isValidObjectId } = require('mongoose');
 const { isNumber } = require('lodash');
-//const Product=require('../models/product')
 
 
 exports.create=async (req,res)=>{
@@ -19,6 +18,17 @@ try {
 }
 
 
+};
+
+
+
+exports.remove=async (req,res)=>{
+    try {
+        const deleted=await Item.findOneAndDelete({slug:req.params.slug})
+        res.json(deleted)
+    } catch (error) {
+        res.status(400).send('Sub delete failed')
+    }
 };
 
 exports.getItemsBySub=async(req,res)=>{

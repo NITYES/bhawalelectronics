@@ -219,6 +219,9 @@ exports.listRelated = async (req, res) => {
 //search/filter products
 //1. if searched using query
 const handleQuery = async (req, res) => {
+
+
+  console.log(req.body)
   const{color,price,star,shipping,page,pageSize}=req.body
   let filter=req.body.query;
   filter=filter.split("-").join(" ");

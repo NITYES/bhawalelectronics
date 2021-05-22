@@ -76,7 +76,7 @@ const ContactForm=({name,setName,address,setAddress,mobile,setMobile,message,set
                 <div style={{color:"#c3003c"}}>Cart</div>
                <div>
                {cart.length?cart.map((p,i)=>{
-                    return <p key={i} classNameName="cart-empty">{p.title} x {p.count}</p>
+                    return <p key={i} classNameName="cart-empty"><span className="product-title">{p.title}</span> <span className="multiply">X</span> <span className="product-count">{p.count}</span></p>
                }):<div >
                    <p classNameName='cart-empty'>Your Cart Is Empty.</p>
                     <Link to="/">Continue Shopping.</Link>

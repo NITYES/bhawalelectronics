@@ -87,6 +87,28 @@ const userAddress=await User.findOneAndUpdate(
 }
 
 
+exports.saveProfile=async(req,res)=>{
+const {name,mobile,address}=req.body
+    const user=await User.findOneAndUpdate(
+        {email:req.user.email},
+          {
+            $set:{
+                name:name,
+                mobile:mobile,
+               address:address
+            }
+        
+        
+        })
+        .exec();
+    
+        res.json(user)
+
+}
+
+
+
+//for non-signned user who want to contact the retailer
 exports.saveContact=async (req,res)=>{
 
 

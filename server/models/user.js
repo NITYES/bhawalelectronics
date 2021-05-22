@@ -3,6 +3,7 @@ const {ObjectId} =mongoose.Schema;
 
 
 const userSchema=new mongoose.Schema({
+    profilePictures:{},
     name:{
         type:String
     },
@@ -19,6 +20,7 @@ const userSchema=new mongoose.Schema({
         type:Array,
         default:[],
     },
+    mobile:Number,
     address:String,
     // wishlist:[{type:ObjectId,ref:"Product"}],
 
